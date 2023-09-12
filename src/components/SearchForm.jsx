@@ -5,12 +5,16 @@ const SearchForm = ({ initialQuery }) => {
 
   const handleSearch = () => {
     console.log("Search handle");
+    onChange(query); 
   };
+
+
   return (
     <div>
       <input
         type="text"
         value={query}
+        onChange={(e) => setQuery(e.target.value)}
         placeholder="What do you want to watch..."
         style={{
           backgroundColor: "rgba(50, 50, 50, 0.80)",
