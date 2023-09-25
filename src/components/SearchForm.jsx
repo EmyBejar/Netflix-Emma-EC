@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 
-const SearchForm = ({ initialQuery }) => {
+const SearchForm = ({ initialQuery, onSearch }) => {
   const [query, setQuery] = useState(initialQuery || "");
 
   const handleSearch = () => {
-    console.log("Search handle");
+    onSearch(query);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      onSearch(query);
+    }
   };
 
   return (
@@ -26,7 +32,8 @@ const SearchForm = ({ initialQuery }) => {
           type="text"
           id="searchInput"
           value={query}
-          //  onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyPress}
           placeholder="What do you want to watch..."
           style={{
             backgroundColor: "rgb(117 109 109)",
@@ -57,7 +64,7 @@ const SearchForm = ({ initialQuery }) => {
             height: "4rem",
             color: "#fff",
             marginTop: "16rem",
-            cursor:"pointer"
+            cursor: "pointer",
           }}
         >
           SEARCH

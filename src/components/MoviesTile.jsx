@@ -13,11 +13,9 @@ const MoviesAll = ({}) => {
   const [modal, setModal] = useState(false);
 
   const handleSelectMovie = (e) => {
-    console.log("Click movie", e);
     setModal(true);
   };
 
-  console.log("movies", movies);
   //style={{ marginTop: "2.5rem", marginLeft: "2rem" }}
   /*return (
     <div>

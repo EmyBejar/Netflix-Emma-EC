@@ -15,6 +15,10 @@ function App() {
     setSelectedGenre(genre);
   };
 
+  const handleSearch = (query) => {
+    console.log(`Searching for: ${query}`);
+  };
+
   return (
     <div style={{ backgroundColor: "#555", position: "absolute",  }}>
       <div
@@ -27,7 +31,7 @@ function App() {
           marginLeft: "8rem",
         }}
       >
-        <SearchForm initialQuery="What do you want to watch..."></SearchForm>
+        <SearchForm initialQuery="" onSearch={handleSearch}></SearchForm>
         <div style={{
           position: "absolute",
           backgroundColor: "rgba(96, 96, 96, 0.68)",
