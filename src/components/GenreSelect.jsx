@@ -1,13 +1,18 @@
+import MoviesAll from "./MoviesTile";
+import SortControl from "./SortControl";
+
 const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
+  
   return (
     <div
       style={{
         display: "block",
         marginTop: "-7rem",
-        marginRight: "7rem",
-        marginLeft: "7rem",
+        marginRight: "15rem",
+        marginLeft: "15rem",
         width: "75rem",
-        height: "107rem",
+        height: "fit-content",
+        padding: "1rem",
         backgroundColor: "#232323",
       }}
     >
@@ -22,14 +27,23 @@ const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
             paddingRight: "4rem",
             height: "2rem",
             paddingRight: "1rem",
+            paddingLeft: "1rem",
+            cursor:"pointer"
           }}
         >
           {genre}
         </button>
       ))}
-      <hr style={{ color: "#424242", opacity: "0.3", width:"60rem" }} />
+      <SortControl></SortControl>
+      <hr style={{ color: "#424242", opacity: "0.3", width: "70rem" }} />
+
+      <MoviesAll></MoviesAll>
     </div>
   );
 };
 
 export default GenreSelect;
+/*
+export const GenreSelect = () => {
+  return (<h1>Test GenreSelect</h1>);
+}*/
