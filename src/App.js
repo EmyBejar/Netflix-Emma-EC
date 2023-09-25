@@ -16,7 +16,7 @@ function App() {
   };
 
   return (
-    <div style={{ backgroundColor: "#555", position: "absolute",     width: "-webkit-fill-available",  }}>
+    <div style={{ backgroundColor: "#555", position: "absolute",  }}>
       <div
         style={{
           backgroundImage: `url(${header})`,
@@ -24,12 +24,25 @@ function App() {
           height: "29rem",
           marginBottom: "8rem",
           width: "77rem",
-          marginRight: "9rem",
-          marginLeft: "15rem",
+          marginLeft: "8rem",
         }}
       >
         <SearchForm initialQuery="What do you want to watch..."></SearchForm>
-        <Counter></Counter>
+        <div style={{
+          position: "absolute",
+          backgroundColor: "rgba(96, 96, 96, 0.68)",
+          color: "#F65261",
+          marginTop: "-25rem",
+          marginLeft: "60rem",
+          width:"11.0625rem",
+          height: "2.875rem",
+          borderRadius: "0.25rem",
+          border:"none",
+          cursor: "pointer",
+        }}>
+           <Counter></Counter>
+        </div>
+       
       </div>
       <GenreSelect
         genres={genres}

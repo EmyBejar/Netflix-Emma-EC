@@ -1,6 +1,45 @@
 import { useState } from "react";
 
-const Counter = ({ initialValue = 0 }) => {
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: props.initialValue || 0,
+    };
+  }
+
+  handleIncrement = () => {
+    this.setState((prevState) => ({
+      count: prevState.count + 1,
+    }));
+  };
+
+  handleDecrement = () => {
+    this.setState((prevState) => ({
+      count: prevState.count - 1,
+    }));
+  };
+
+  render() {
+    const { count } = this.state;
+
+    const counterElement = React.createElement('div', null,
+      React.createElement('p', null, 'Value: ', count),
+      React.createElement('button', { onClick: this.handleIncrement }, '+ Increment'),
+      React.createElement('button', { onClick: this.handleDecrement }, '- Decrement')
+    );
+
+    return counterElement;
+  }
+}
+
+export default Counter;
+
+
+/*const Counter = ({ initialValue = 0 }) => {
   
   const [count, setCount] = useState(initialValue);
 
@@ -9,7 +48,7 @@ const Counter = ({ initialValue = 0 }) => {
   };
   
   
-  /*const handleDecrement = () => {
+  const handleDecrement = () => {
     setCount(count - 1);
   };
   
@@ -26,7 +65,7 @@ const Counter = ({ initialValue = 0 }) => {
         Decrement
       </button>
   
-  */
+  
 
   return (
     <div>
@@ -52,8 +91,10 @@ const Counter = ({ initialValue = 0 }) => {
 };
 
 export default Counter;
-
+*/
 /*
 export const Counter = () => {
   return (<h1>Test</h1>);
 }*/
+
+

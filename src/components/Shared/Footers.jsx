@@ -3,7 +3,7 @@ const Footers = ({}) => {
     <div
       style={{
         display: "block",
-        marginLeft: "15rem",
+        marginLeft: "8rem",
         width: "77rem",
         height: "4.375rem",
         backgroundColor: "#424242",

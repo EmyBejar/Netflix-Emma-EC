@@ -8,8 +8,7 @@ const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
       style={{
         display: "block",
         marginTop: "-7rem",
-        marginRight: "15rem",
-        marginLeft: "15rem",
+        marginLeft: "8rem",
         width: "75rem",
         height: "fit-content",
         padding: "1rem",
