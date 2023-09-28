@@ -5,6 +5,6 @@ export default {
     component: SearchForm,
 }
 
-const Template = args => <SearchForm />;
+const Template = args => <SearchForm {...args}/>;
 
 export const Default = Template.bind({});

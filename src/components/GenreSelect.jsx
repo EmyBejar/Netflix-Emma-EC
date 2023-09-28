@@ -1,20 +1,10 @@
-import MoviesAll from "./MoviesTile";
+
 import SortControl from "./SortControl";
 
 const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
   
   return (
-    <div
-      style={{
-        display: "block",
-        marginTop: "-7rem",
-        marginLeft: "8rem",
-        width: "75rem",
-        height: "fit-content",
-        padding: "1rem",
-        backgroundColor: "#232323",
-      }}
-    >
+    <div>
       {genres.map((genre) => (
         <button
           key={genre}
@@ -35,8 +25,6 @@ const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
       ))}
       <SortControl></SortControl>
       <hr style={{ color: "#424242", opacity: "0.3", width: "70rem" }} />
-
-      <MoviesAll></MoviesAll>
     </div>
   );
 };

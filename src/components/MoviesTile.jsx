@@ -4,16 +4,16 @@ import killbill from "../img/group-5@2x.png";
 import inception from "../img/group-41@2x.png";
 import dogs from "../img/group-51@2x.png";
 import bohemia from "../img/group-4@2x.png";
-import MovieDetail from "./MovieDetails";
 import Modal from "./Shared/Modal";
 
-const MoviesAll = ({}) => {
+const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
   const movies = ["Avangers", "KillBill", "Inception", "Dogs", "Bohemia"];
 
   const [modal, setModal] = useState(false);
 
-  const handleSelectMovie = (e) => {
-    setModal(true);
+  const handleSelectMovie = (movieData) => {
+    setDataMovie(movieData);
+    setMovieDetail(true);
   };
 
   //style={{ marginTop: "2.5rem", marginLeft: "2rem" }}
@@ -48,8 +48,18 @@ const MoviesAll = ({}) => {
         }}
       >
         <div
-          onClick={handleSelectMovie}
+          onClick={() =>
+            handleSelectMovie({
+              title: "Avengers",
+              genre: "Action",
+              duration: "2h 23m",
+              rating: "8.0",
+              synopsis: "Description for Avengers movie...",
+              backgroundImage: avangers,
+            })
+          }
           id="avanger"
+          value={dataMovie}
           style={{
             width: "20rem",
             height: "25rem",
@@ -62,8 +72,18 @@ const MoviesAll = ({}) => {
         ></div>
 
         <div
-        onClick={handleSelectMovie}
-        id="killbi"
+          onClick={() =>
+            handleSelectMovie({
+              title: "Kill Bill",
+              genre: "Action",
+              duration: "2h 11m",
+              rating: "8.1",
+              synopsis: "Description for Kill Bill movie...",
+              backgroundImage: killbill,
+            })
+          }
+          id="killbi"
+          value={dataMovie}
           style={{
             width: "20rem",
             height: "25rem",
@@ -75,8 +95,18 @@ const MoviesAll = ({}) => {
           }}
         ></div>
         <div
-        onClick={handleSelectMovie}
-        id="inception"
+          onClick={() =>
+            handleSelectMovie({
+              title: "Inception",
+              genre: "Science Fiction",
+              duration: "2h 28m",
+              rating: "8.8",
+              synopsis: "Description for Inception movie...",
+              backgroundImage: inception,
+            })
+          }
+          id="inception"
+          value={dataMovie}
           style={{
             width: "20rem",
             height: "25rem",
@@ -90,8 +120,6 @@ const MoviesAll = ({}) => {
       </div>
 
       <div
-      onClick={handleSelectMovie}
-      id=""
         style={{
           display: "flex",
           color: "#fff",
@@ -102,8 +130,18 @@ const MoviesAll = ({}) => {
         }}
       >
         <div
-        onClick={handleSelectMovie}
-        id="dogs"
+          onClick={() =>
+            handleSelectMovie({
+              title: "Dogs",
+              genre: "Science Fiction",
+              duration: "1h 28m",
+              rating: "6.8",
+              synopsis: "Description for Dogs movie...",
+              backgroundImage: dogs,
+            })
+          }
+          id="dogs"
+          value={dataMovie}
           style={{
             width: "20rem",
             height: "25rem",
@@ -115,8 +153,18 @@ const MoviesAll = ({}) => {
           }}
         ></div>
         <div
-        onClick={handleSelectMovie}
-        id="bohemia"
+          onClick={() =>
+            handleSelectMovie({
+              title: "Bohemia",
+              genre: "Drama",
+              duration: "1h 28m",
+              rating: "9.8",
+              synopsis: "Description for Bohemia movie...",
+              backgroundImage: bohemia,
+            })
+          }
+          id="bohemia"
+          value={dataMovie}
           style={{
             width: "20rem",
             height: "25rem",
@@ -129,7 +177,7 @@ const MoviesAll = ({}) => {
         ></div>
       </div>
 
-      {modal && <Modal  setModal={setModal} ></Modal>}
+      {modal && <Modal setModal={setModal}></Modal>}
     </div>
   );
 };

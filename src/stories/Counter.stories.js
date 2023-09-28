@@ -12,19 +12,5 @@ const Template = args => <Counter {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {
-    count: 0
+  initialValue: 0
 }
-/*
-export const Default = () => {
-    const [count, setCount] = React.useState(0); 
-  
-    return (
-      <Counter
-        count={count}
-        setCount={count => {
-          action('count')(count); 
-          setCount(count);
-        }}
-      />
-    );
-  };*/
