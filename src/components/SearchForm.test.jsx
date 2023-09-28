@@ -14,31 +14,29 @@ describe("Test Form", () => {
   });
 
   it("Test that after typing to the input and a 'click' event on the Submit button, the 'onChange' prop is called with proper value", () => {
-    const typedValue = "What do you want to watch...";
-    const onChangeMock = jest.fn();
+    const mockOnChange = jest.fn();
     const { getByPlaceholderText, getByText } = render(
-      <SearchForm initialQuery="" onChange={onChangeMock} />
+      <SearchForm initialQuery="" onSearch={mockOnChange} />
     );
-    const inputElement = getByPlaceholderText("What do you want to watch...");
+    const input = getByPlaceholderText("What do you want to watch...");
     const submitButton = getByText("SEARCH");
 
-    fireEvent.change(inputElement, { target: { value: typedValue } });
+    fireEvent.change(input, { target: { value: "Test Movie" } });
     fireEvent.click(submitButton);
 
-    expect(onChangeMock).toHaveBeenCalledWith(typedValue);
+    expect(mockOnChange).toHaveBeenCalledWith("Test Movie");
   });
 
   it("Test that after typing to the input and pressing Enter key, the 'onChange' prop is called with proper value", () => {
-    const onChangeMock = jest.fn();
+    const mockOnChange = jest.fn();
     const { getByPlaceholderText } = render(
-      <SearchForm onChange={onChangeMock} />
+      <SearchForm initialQuery="" onSearch={mockOnChange} />
     );
-    const inputElement = getByPlaceholderText("What do you want to watch...");
+    const input = getByPlaceholderText("What do you want to watch...");
 
-    const typedValue = "What do you want to watch...";
-    fireEvent.change(inputElement, { target: { value: typedValue } });
-    fireEvent.keyPress(inputElement, { key: "Enter", code: 13, charCode: 13 });
+    fireEvent.change(input, { target: { value: "Test Movie" } });
+    fireEvent.keyDown(input, { key: "Enter", code: "Enter" });
 
-    expect(onChangeMock).toHaveBeenCalledWith(typedValue);
+    expect(mockOnChange).toHaveBeenCalledWith("Test Movie");
   });
 });
