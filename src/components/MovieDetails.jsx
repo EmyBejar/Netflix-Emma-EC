@@ -2,8 +2,6 @@ import avangers from "../img/group-3@2x.png";
 import CloseBtn from "../img/Close-Button.png";
 
 const MovieDetail = ({ setMovieDetail, dataMovie }) => {
-  console.log("data movie details", dataMovie);
-
   const hideMovieDetails = () => {
     setTimeout(() => {
       setMovieDetail(false);
