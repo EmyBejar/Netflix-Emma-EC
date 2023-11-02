@@ -25,20 +25,7 @@ const Modal = ({ action, dataMovie, setModal }) => {
   };
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        backgroundColor: "#232323",
-        top: "20rem",
-        left: "-9rem",
-        right: "0",
-        color: "#fff",
-        width: "61rem",
-        height: "20rem",
-        marginLeft: "19rem",
-        padding: "4rem 3.56rem 0rem 3.75rem",
-      }}
-    >
+    <div className="div-principal-mf">
       <div
         style={{
           position: "absolute",

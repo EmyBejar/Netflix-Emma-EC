@@ -11,3 +11,262 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+//App file
+.div-principal-conteiner {
+  background-color: #555;
+  position: absolute;
+  width: -webkit-fill-available;
+}
+
+.div-second-conteiner {
+  background-image: url("./img/header.png");
+  background-size: cover;
+  height: 29rem;
+  margin-bottom: 8rem;
+  width: 77rem;
+  margin-left: 6rem;
+}
+
+.div-conteiner {
+  display: block;
+  margin-top: -7rem;
+  margin-left: 6rem;
+  width: 75rem;
+  height: fit-content;
+  padding: 1rem;
+  background-color: #232323;
+}
+
+.div-counter {
+  position: absolute;
+  background-color: rgba(96, 96, 96, 0.68);
+  color: #F65261;
+  margin-top: -25rem;
+  margin-left: 60rem;
+  width: 11.0625rem;
+  height: 2.875rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+//MovieDetails
+.div-principal-md {
+  background-color: rgb(35, 35, 35);
+  height: inherit;
+  width: inherit;
+}
+
+.div-second-md {
+  position: absolute;
+  right: 13rem;
+  top: 3rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.form-md {
+  top: 4rem; 
+  color: #fff; 
+  padding: 3rem; 
+}
+
+.paragraGenre {
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  margin-top: -2rem;
+}
+
+.paragraDuration {
+  color: #F65261; 
+  font-size: 1.5rem; 
+  font-weight: 300; 
+}
+
+
+.span-md {
+  border: 1px solid #fff;
+  border-radius: 100%;
+  padding: 0.25rem;
+}
+
+//MovieTile
+
+
+//Menu Movie
+.div-menu-movie {
+  background-Color: rgba(35, 35, 35, 0.92);
+  border-radius: 0.25rem;
+  width: 10.875rem;
+  height: 6.9375rem;
+  margin-Left: 7rem;
+  margin-top: 0rem;
+  padding: 0.85rem;
+  position: relative;
+}
+
+.div-sec-menu-movie {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.list-movie {
+  list: none;
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
+//Movie Form
+.div-principal-mf {
+  position: absolute;
+  background-Color: #232323;
+  top: 20rem;
+  left: -9rem;
+  right: 0;
+  color: #fff;
+  width: 61rem;
+  height: 20rem;
+  margin-left: 19rem;
+  padding: 4rem 3.56rem 0rem 3.75rem;
+}
+
+.div-sec-mf {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.label-title-mf {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-Weight: 300;
+  letter-spacing: 0.0625rem;
+}
+
+.div-content-mf {
+  color: #F65261;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05556rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+
+//footer
+.div-footer {
+  display: block;
+  margin-left: 6rem;
+  width: 77rem;
+  height: 4.375rem;
+  background-color: #424242;
+  font-size: 1.25rem;
+  color: #F65261;
+  text-align:center;
+  padding-top:2rem;
+}
+
+
+//dialog
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 400px;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//
+
+//Helpers
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dialog-content {
+  margin-top: 1rem;
+}
+
+.title-h3 {
+  font-size: 2.5rem;
+  letter-spacing: 0.0625rem;
+  font-weight: 300;
+}
+
+.div-buttons-form {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 3rem;
+  font-size: 1.25rem;
+  gap: 1rem;
+}
+
+.submit-button {
+  border: 1px solid #F65261;
+  width: 11rem;
+  height: 3.5rem;
+  background-color: #F65261;
+  border-radius: 0.25rem;
+}
+
+.reset-button {
+  width: 11rem;
+  height: 3.5rem;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+
+.input {
+  display: inline-block;
+  width: 15.5rem;
+  margin-bottom: 0rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  background-color: rgba(50, 50, 50, 0.95);
+  border: none;
+  color: #fff;
+}
+
+.label-form {
+  display: flex;
+  text-align: right;
+  width: 8rem;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-weight: 500;
+}

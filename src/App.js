@@ -8,6 +8,8 @@ import header from "./img/header.png";
 import MoviesAll from "./components/MoviesTile";
 import MovieDetail from "./components/MovieDetails";
 
+import Dialog from "./components/Shared/Dialog";
+
 function App() {
   const genres = ["ALL", "DOCUMENTARY", "COMEDY", "HORROR", "CRIME"];
   const [selectedGenre, setSelectedGenre] = useState("Action");
@@ -30,24 +32,19 @@ function App() {
     console.log(`Searching for: ${query}`);
   };
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const openDialog = () => {
+    setIsDialogOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+  };
+
   return (
-    <div
-      style={{
-        backgroundColor: "#555",
-        position: "absolute",
-        width: "-webkit-fill-available",
-      }}
-    >
-      <div
-        style={{
-          backgroundImage: `url(${header})`,
-          backgroundSize: "cover",
-          height: "29rem",
-          marginBottom: "8rem",
-          width: "77rem",
-          marginLeft: "6rem",
-        }}
-      >
+    <div className="div-principal-conteiner">
+      <div className="div-second-conteiner">
         {movieDetail && (
           <MovieDetail
             setMovieDetail={setMovieDetail}
@@ -58,37 +55,14 @@ function App() {
         {!movieDetail && (
           <>
             <SearchForm initialQuery="" onSearch={handleSearch}></SearchForm>
-            <div
-              style={{
-                position: "absolute",
-                backgroundColor: "rgba(96, 96, 96, 0.68)",
-                color: "#F65261",
-                marginTop: "-25rem",
-                marginLeft: "60rem",
-                width: "11.0625rem",
-                height: "2.875rem",
-                borderRadius: "0.25rem",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
+            <div className="div-counter">
               <Counter></Counter>
             </div>
           </>
         )}
       </div>
 
-      <div
-        style={{
-          display: "block",
-          marginTop: "-7rem",
-          marginLeft: "6rem",
-          width: "75rem",
-          height: "fit-content",
-          padding: "1rem",
-          backgroundColor: "#232323",
-        }}
-      >
+      <div className="div-conteiner">
         <GenreSelect
           genres={genres}
           selectedGenre={selectedGenre}
@@ -99,6 +73,15 @@ function App() {
           dataMovie={dataMovie}
           setDataMovie={setDataMovie}
         ></MoviesAll>
+        
+
+        <button onClick={openDialog}>Open Dialog</button>
+      {isDialogOpen && (
+        <Dialog title="My Custom Dialog" onClose={closeDialog}>
+          <p>This is the custom content of the dialog.</p>
+        </Dialog>
+      )}
+
       </div>
       <Footers></Footers>
     </div>
