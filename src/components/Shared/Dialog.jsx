@@ -1,21 +1,28 @@
-import React from "react";
-import { Children } from "react";
-import Portal from "react-portal";
+import React, { useEffect, useRef } from 'react';
+import { Portal } from 'react-portal'; 
 import FocusTrap from "focus-trap-react";
 
-const Dialog = ({ title, content, setModal }) => {
 
+const Dialog = ({ title, children, onClose }) => {
 
-  const onClose = () => {
-    setTimeout(() => {
-      setModal(false);
-    }, 500);
-  };
+  useEffect(() => {
+    const closeOnEscape = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
 
-  // <div className="dialog-content">{children}</div>
+    document.addEventListener('keydown', closeOnEscape);
 
-  return (
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [onClose]);
+
+  
  
+  return (
+    <Portal>
       <div className="dialog-overlay">
         <FocusTrap>
           <div className="dialog">
@@ -24,11 +31,12 @@ const Dialog = ({ title, content, setModal }) => {
               <button className="close-button" onClick={onClose}>
                 ×
               </button>
+              <div className="dialog-body">{children}</div>
             </div>
           </div>
         </FocusTrap>
       </div>
-   
+      </Portal>
   );
 };
 

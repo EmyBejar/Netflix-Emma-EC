@@ -1,23 +1,23 @@
 import CloseBtn from "../../img/Close-Button.png";
 
-const MenuMovie = ({ setAction, setModal, setbuttonMenu, setMenu }) => {
+const MenuMovie = ({ setAction, setMovieForm, setbuttonMenu, setMenu }) => {
   const hideModal = () => {
     setTimeout(() => {
-      setModal(false);
+      setMovieForm(false);
       setbuttonMenu(true);
       setMenu(false);
     }, 500);
   };
 
   const hideEdit = () => {
-    setModal(true);
+    setMovieForm(true);
     setMenu(false);
     setbuttonMenu(true);
     setAction("EDIT");
   };
 
   const handleCancel = () => {
-    setModal(true);
+    setMovieForm(true);
     setMenu(false);
     setbuttonMenu(true);
     setAction("DELETE");

@@ -4,14 +4,15 @@ import killbill from "../img/group-5@2x.png";
 import inception from "../img/group-41@2x.png";
 import dogs from "../img/group-51@2x.png";
 import bohemia from "../img/group-4@2x.png";
-import Modal from "./Shared/Modal";
 import MenuMovie from "./Shared/MenuMovie";
 import ButtonMenu from "./Shared/ButtonMenu";
+import MovieForm from "./Shared/MovieForm";
 
 const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
+  
   const movies = ["Avangers", "KillBill", "Inception", "Dogs", "Bohemia"];
 
-  const [modal, setModal] = useState(false);
+  const [movieForm, setMovieForm] = useState(false);
   const [buttonMenu, setbuttonMenu] = useState(true);
   const [menu, setMenu] = useState(false);
   const [action, setAction] = useState('');
@@ -21,52 +22,6 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
     setMovieDetail(true);
   };
 
-
-  /*return (
-    <div style={{ alignItems: "center", paddingTop: "3.5rem" }}>
-      <div
-        style={{
-          display: "flex",
-          color: "#fff",
-          gap: "3.4rem",
-          marginBottom: "2rem",
-          paddingLeft: "2.5rem",
-        }}
-      >
-         {movies.map((movie) => {
-         
-        <div
-          onClick={() =>
-            handleSelectMovie({
-              title: "Avengers",
-              genre: "Action",
-              duration: "2h 23m",
-              rating: "8.0",
-              synopsis: "Description for Avengers movie...",
-              backgroundImage: avangers,
-            })
-          }
-          id="avanger"
-          value={dataMovie}
-          style={{
-            width: "20rem",
-            height: "25rem",
-            padding: "0.50rem",
-            opacity: "0.9",
-            backgroundImage: `url(${avangers})`,
-            backgroundSize: "cover",
-            cursor: "pointer",
-          }}
-        >
-        </div>
-        
-        })}
-      </div>
-
-
-      {modal && <Modal setModal={setModal}></Modal>}
-    </div>
-  );*/
 
   return (
     <div style={{ alignItems: "center", paddingTop: "3.5rem" }}>
@@ -112,7 +67,7 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
 
           {menu && (
             <MenuMovie
-              setModal={setModal}
+              setMovieForm={setMovieForm}
               setbuttonMenu={setbuttonMenu}
               setMenu={setMenu}
               setAction={setAction}
@@ -254,7 +209,7 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
         </div>
       </div>
 
-      {modal && <Modal action={action} dataMovie={dataMovie} setModal={setModal}></Modal>}
+      {movieForm && <MovieForm action={action} dataMovie={dataMovie} setMovieForm={setMovieForm}></MovieForm>}
     </div>
   );
 };

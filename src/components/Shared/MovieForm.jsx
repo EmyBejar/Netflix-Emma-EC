@@ -1,5 +1,15 @@
-const MovieForm = ({}) => {
-  const [formData, setFormData] = useState(content);
+import { useState } from "react";
+import CloseBtn from "../../img/Close-Button.png";
+
+const MovieForm = ({action, dataMovie, setMovieForm}) => {
+
+  const [formData, setFormData] = useState(dataMovie);
+
+  const hideModal = () => {
+    setTimeout(() => {
+      setMovieForm(false);
+    }, 500);
+  };
 
   const handleChange = (e, key) => {
     const { value } = e.target;
@@ -9,9 +19,13 @@ const MovieForm = ({}) => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Data:", formData);
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const movieInfo = Object.fromEntries(formData);
+    onSubmit(movieInfo);
+    event.target.reset(); // Reset the form after submission
   };
 
   return (

@@ -4,7 +4,7 @@ const ButtonMenu = ({ setbuttonMenu, setMenu, setMovieDetail }) => {
   const openMenu = () => {
     setbuttonMenu(false);
     setMenu(true);
-    setMovieDetail(false);
+    //setMovieDetail(false);
   };
 
   return (
