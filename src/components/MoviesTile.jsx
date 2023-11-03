@@ -4,37 +4,24 @@ import killbill from "../img/group-5@2x.png";
 import inception from "../img/group-41@2x.png";
 import dogs from "../img/group-51@2x.png";
 import bohemia from "../img/group-4@2x.png";
-import Modal from "./Shared/Modal";
+import MenuMovie from "./Shared/MenuMovie";
+import ButtonMenu from "./Shared/ButtonMenu";
+import MovieForm from "./Shared/MovieForm";
 
 const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
+  
   const movies = ["Avangers", "KillBill", "Inception", "Dogs", "Bohemia"];
 
-  const [modal, setModal] = useState(false);
+  const [movieForm, setMovieForm] = useState(false);
+  const [buttonMenu, setbuttonMenu] = useState(true);
+  const [menu, setMenu] = useState(false);
+  const [action, setAction] = useState('');
 
   const handleSelectMovie = (movieData) => {
     setDataMovie(movieData);
     setMovieDetail(true);
   };
 
-  //style={{ marginTop: "2.5rem", marginLeft: "2rem" }}
-  /*return (
-    <div>
-      {movies.map((movie) => {
-        <div
-          key={movie}
-          style={{
-            width: "20rem",
-            height: "25rem",
-            border: "1px solid #fff",
-            padding: "0.50rem",
-            opacity: "0.9",
-          }}
-        >
-          {movie}
-        </div>;
-      })}
-    </div>
-  );*/
 
   return (
     <div style={{ alignItems: "center", paddingTop: "3.5rem" }}>
@@ -69,7 +56,24 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
             backgroundSize: "cover",
             cursor: "pointer",
           }}
-        ></div>
+        >
+          {buttonMenu && (
+            <ButtonMenu
+              setbuttonMenu={setbuttonMenu}
+              setMenu={setMenu}
+              setMovieDetail={setMovieDetail}
+            ></ButtonMenu>
+          )}
+
+          {menu && (
+            <MenuMovie
+              setMovieForm={setMovieForm}
+              setbuttonMenu={setbuttonMenu}
+              setMenu={setMenu}
+              setAction={setAction}
+            ></MenuMovie>
+          )}
+        </div>
 
         <div
           onClick={() =>
@@ -93,7 +97,14 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
             backgroundSize: "cover",
             cursor: "pointer",
           }}
-        ></div>
+        >
+          {buttonMenu && (
+            <ButtonMenu
+              setbuttonMenu={setbuttonMenu}
+              setMenu={setMenu}
+            ></ButtonMenu>
+          )}
+        </div>
         <div
           onClick={() =>
             handleSelectMovie({
@@ -116,7 +127,14 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
             backgroundSize: "cover",
             cursor: "pointer",
           }}
-        ></div>
+        >
+          {buttonMenu && (
+            <ButtonMenu
+              setbuttonMenu={setbuttonMenu}
+              setMenu={setMenu}
+            ></ButtonMenu>
+          )}
+        </div>
       </div>
 
       <div
@@ -151,7 +169,14 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
             backgroundSize: "cover",
             cursor: "pointer",
           }}
-        ></div>
+        >
+          {buttonMenu && (
+            <ButtonMenu
+              setbuttonMenu={setbuttonMenu}
+              setMenu={setMenu}
+            ></ButtonMenu>
+          )}
+        </div>
         <div
           onClick={() =>
             handleSelectMovie({
@@ -174,10 +199,17 @@ const MoviesAll = ({ setMovieDetail, dataMovie, setDataMovie }) => {
             backgroundSize: "cover",
             cursor: "pointer",
           }}
-        ></div>
+        >
+          {buttonMenu && (
+            <ButtonMenu
+              setbuttonMenu={setbuttonMenu}
+              setMenu={setMenu}
+            ></ButtonMenu>
+          )}
+        </div>
       </div>
 
-      {modal && <Modal setModal={setModal}></Modal>}
+      {movieForm && <MovieForm action={action} dataMovie={dataMovie} setMovieForm={setMovieForm}></MovieForm>}
     </div>
   );
 };

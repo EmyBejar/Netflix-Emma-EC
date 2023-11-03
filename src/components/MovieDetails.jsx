@@ -2,8 +2,6 @@ import avangers from "../img/group-3@2x.png";
 import CloseBtn from "../img/Close-Button.png";
 
 const MovieDetail = ({ setMovieDetail, dataMovie }) => {
-  console.log("data movie details", dataMovie);
-
   const hideMovieDetails = () => {
     setTimeout(() => {
       setMovieDetail(false);
@@ -11,27 +9,12 @@ const MovieDetail = ({ setMovieDetail, dataMovie }) => {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "rgb(35, 35, 35)",
-        height: "inherit",
-        width: "inherit",
-      }}
-    >
-      <div
-        style={{
-          position: "absolute",
-          right: "13rem",
-          top: "3rem",
-          width: "3rem",
-          height: "3rem",
-          cursor: "pointer",
-        }}
-      >
+    <div className="div-principal-md">
+      <div className="div-second-md">
         <img src={CloseBtn} alt="close" onClick={hideMovieDetails} />
       </div>
 
-      <form style={{ top: "4rem", color: "#fff", padding: "3rem" }}>
+      <form className="form-md">
         <div
           id="avanger"
           style={{
@@ -52,36 +35,12 @@ const MovieDetail = ({ setMovieDetail, dataMovie }) => {
             marginLeft: "0rem",
           }}
         >
-          <h3
-            style={{
-              fontSize: "2.5rem",
-              letterSpacing: "0.0625rem",
-              fontWeight: "300",
-            }}
-          >
+          <h3 className="title-h3">
             {dataMovie.title}{" "}
-            <span
-              style={{
-                border: "1px solid #fff",
-                borderRadius: "100%",
-                padding: "0.25rem",
-              }}
-            >
-              {dataMovie.rating}
-            </span>
+            <span className="span-md">{dataMovie.rating}</span>
           </h3>
-          <p
-            style={{
-              textTransform: "capitalize",
-              fontSize: "0.875rem",
-              marginTop: "-2rem",
-            }}
-          >
-            {dataMovie.genre}
-          </p>
-          <p
-            style={{ color: "#F65261", fontSize: "1.5rem", fontWeight: "300" }}
-          >
+          <p className="paragraGenre">{dataMovie.genre}</p>
+          <p className="paragraDuration">
             {dataMovie.duration}
           </p>
           <p style={{ textTransform: "capitalize" }}>{dataMovie.synopsis}</p>
